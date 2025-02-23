@@ -1,0 +1,156 @@
+<app-sidebar />
+
+<div class="box">
+  <div class="row">
+    <div class="topic">
+      <h1>{{boardData?.boardName}}</h1>
+
+      <div class="invite">
+        <button class="selectperson" (click)="showPopup()"><p>Invite</p></button>
+
+        <p>ผู้รับผิดชอบ : {{ selectedPerson }}</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="row" id="areainfo">
+
+    <div class="col-3" id="boxinfo" (dragover)="onDragOver($event)" (drop)="onDrop($event, '1')">
+      <div class="title">
+        <div class="topicboxinfo" >{{boardData?.column1}} </div>
+        <button class="btn"  (click)="openModal('1')">Add</button>
+      </div>
+    
+      <div class="info" *ngFor="let item of boardData['1']; let i = index"
+           (dragstart)="onDragStart($event, item, '1')" 
+           (dragend)="onDragEnd($event)">
+        <div class="boxtask" draggable="true">
+          <div class="tasknametopic">
+            <p><strong>Name: </strong></p>
+          </div>
+          <p>{{ item?.name }}</p>
+          <p><strong>Detail: </strong></p>
+          <div class="deatiltask">
+            <p>{{ item?.detail }}</p>
+          </div>
+          <button class="btn btn-warning" (click)="openModal('1', i)"><i class="bi bi-pen"></i></button>
+          <button class="btn btn-danger" (click)="deleteTask('1', i)"><i class="bi bi-trash"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-3" id="boxinfo" (dragover)="onDragOver($event)" (drop)="onDrop($event, '2')">
+      <div class="title">
+        <div class="topicboxinfo">{{boardData?.column2}} </div>
+        <button class="btn" (click)="openModal('2')">Add</button>
+      </div>
+    
+      <div class="info" *ngFor="let item of boardData['2']; let i = index"
+           (dragstart)="onDragStart($event, item, '2')" 
+           (dragend)="onDragEnd($event)">
+        <div class="boxtask" draggable="true">
+          <div class="tasknametopic">
+            <p><strong>Name: </strong></p>
+          </div>
+          <p>{{ item?.name }}</p>
+          <p><strong>Detail: </strong></p>
+          <div class="deatiltask">
+            <p>{{ item?.detail }}</p>
+          </div>
+          <button class="btn btn-warning" (click)="openModal('2', i)"><i class="bi bi-pen"></i></button>
+          <button class="btn btn-danger" (click)="deleteTask('2', i)"><i class="bi bi-trash"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-3" id="boxinfo" (dragover)="onDragOver($event)" (drop)="onDrop($event, '3')">
+      <div class="title">
+        <div class="topicboxinfo">{{boardData?.column3}} </div>
+        <button class="btn" (click)="openModal('3')">Add</button>
+      </div>
+    
+      <div class="info" *ngFor="let item of boardData['3']; let i = index"
+           (dragstart)="onDragStart($event, item, '3')" 
+           (dragend)="onDragEnd($event)">
+        <div class="boxtask" draggable="true">
+          <div class="tasknametopic">
+            <p><strong>Name: </strong></p>
+          </div>
+          <p>{{ item?.name }}</p>
+          <p><strong>Detail: </strong></p>
+          <div class="deatiltask">
+            <p>{{ item?.detail }}</p>
+          </div>
+          <button class="btn btn-warning" (click)="openModal('3', i)"><i class="bi bi-pen"></i></button>
+          <button class="btn btn-danger" (click)="deleteTask('3', i)"><i class="bi bi-trash"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-3" id="boxinfo" (dragover)="onDragOver($event)" (drop)="onDrop($event, '4')">
+      <div class="title">
+        <div class="topicboxinfo">{{boardData?.column4}} </div>
+        <button class="btn" id="addbtn" (click)="openModal('4')">Add</button>
+      </div>
+    
+      <div class="info" *ngFor="let item of boardData['4']; let i = index"
+           (dragstart)="onDragStart($event, item, '4')" 
+           (dragend)="onDragEnd($event)">
+        <div class="boxtask" draggable="true">
+          <div class="tasknametopic">
+            <p><strong>Name: </strong></p>
+          </div>
+          <p>{{ item?.name }}</p>
+          <p><strong>Detail: </strong></p>
+          <div class="deatiltask">
+            <p>{{ item?.detail }}</p>
+          </div>
+          <button class="btn btn-warning" (click)="openModal('4', i)"><i class="bi bi-pen"></i></button>
+          <button class="btn btn-danger" (click)="deleteTask('4', i)"><i class="bi bi-trash"></i></button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!--เพิ่ม Task -->
+<div class="modal" *ngIf="isModalOpen">
+  <div class="boxinfo">
+    <h2>New Task</h2>
+
+    <form *ngIf="showForms" (ngSubmit)="submitForms()">
+      <div class="inputcard">
+        <div class="row">
+          <label for="taskName" class="form-label">Task Name</label>
+          <input type="text" id="taskName" [(ngModel)]="taskName" name="taskName" class="inputinfo" />
+        </div>
+
+        <div class="row">
+          <label for="taskDetail" class="form-label">Detail</label>
+          <textarea id="taskDetail" [(ngModel)]="taskDetail" name="taskDetail" class="inputinfo"></textarea>
+        </div>
+        
+
+        <div class="d-flex justify-content-between w-100">
+          <button type="button" class="close-btn" (click)="closeModal()">Close</button>
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+

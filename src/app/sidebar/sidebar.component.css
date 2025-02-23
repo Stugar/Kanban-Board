@@ -1,0 +1,199 @@
+.main{
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    background-color: #f1f1f1 ;
+    top: 0;
+    left: 0;
+}
+
+img {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    margin-top: 49px;
+    margin-bottom: 49px;
+    border: white 2px solid;
+    border-radius: 50%;
+    object-fit: cover; 
+    
+  }
+
+.boxlogo{
+    border-bottom: black 2px solid ;
+}
+
+
+.button {
+    margin: 10px auto;
+    font-size: 17px;
+    height: 60px;
+    width: 160px;
+    align-items: center;
+    justify-content: center;
+    
+
+    --bg: #000;
+    --hover-bg: #e16c4b;
+    --hover-text: #f1f1f1;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid var(--bg);
+    border-radius: 28px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
+}
+  
+.button:hover {
+    color: var(--hover-text);
+    transform: translate(-0.25rem, -0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+}
+  
+.button:active {
+    transform: translate(0);
+    box-shadow: none;
+}
+  
+
+.newbtn{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.board {
+    justify-content: space-between; 
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
+    max-height: 300px;        /* กำหนดความสูงสูงสุดของกล่อง */
+    overflow-y: auto;   
+}
+
+.icon{
+    margin-right: 10px;
+}
+
+
+/* modal */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+.boxinfo {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 480px;  
+    height: 600px;
+
+}
+
+.row{
+    display: flex;
+}
+
+
+.inputcard {
+    padding: 20px;
+    border-radius: 8px;
+    
+}
+
+.inputinfo {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center; 
+    padding: 10px; 
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.inputinfo:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 5px #e16c4b;
+
+}
+
+#editinfo{
+    width: 140px;
+}
+
+.custom-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+/* btn close submit */
+
+.d-flex {
+    justify-content: space-between; /* จัดปุ่มให้ชิดซ้ายและขวา */
+    width: 100%;
+  }
+  
+
+.close-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.close-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+
+}
+
+
+.btn{
+    border: none;
+    margin-top: 10px;
+    justify-content: center;
+}
+.btn:hover p{
+    text-decoration: underline;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+.btnlogout{
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    margin-left: 20px;
+    border-top: #000 2px solid;
+}

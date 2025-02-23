@@ -1,0 +1,198 @@
+.box{
+    margin-left: 240px;
+    margin-top: 40px;
+    width: 1200px;
+}
+
+.topic{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: center; 
+}
+
+#areainfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+#boxinfo{
+    align-items: center;
+    justify-content: center;
+    border: black 2px solid;
+    border-radius: 8px;
+    width: 280px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tasknametopic,.deatiltask{
+    display: flex;
+    justify-content: space-between;
+    word-wrap: break-word;
+}
+
+.title{
+    display: flex;
+    border-bottom: black 1px solid;
+}
+
+.boxtask{
+    height:  auto;
+    margin: 9px;
+    padding: 5px;
+    border: #000000 1px  solid;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+p {
+    max-height: 180px;        /* กำหนดความสูงสูงสุดของกล่อง */
+    overflow-y: auto;         /* เพิ่ม scroll bar เมื่อข้อความเกิน */
+}
+  
+
+.boxtask p{
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.topicboxinfo{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100%; 
+    text-align: center; 
+    height: 40px;
+    width: 260px;
+    align-items: center;
+    margin-top: 10px;
+
+}
+
+.btn{
+    margin-right: 10px;
+    border: none ;
+    background:none;
+}
+
+.btn:hover{
+    text-decoration: underline;
+}
+
+.bi-trash {
+    color: black;
+    margin-bottom: 50px;
+}
+  
+
+#addbtn{
+    margin-bottom: 10px;
+}
+
+/* modal */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+.boxinfo {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 420px;  
+    height: 360px;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.inputinfo {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center; 
+    padding: 10px; 
+    width: 360px;
+    height: 60px;
+    margin-bottom: 10px;
+    resize: none; 
+    overflow-y: auto;
+    margin-left: 20px;
+}
+
+.inputinfo:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 5px #e16c4b;
+
+}
+
+
+/* btn */
+.close-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.close-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+
+}
+
+
+.btn{
+    margin-top: 10px;
+    border: none;
+    margin-top: 10px;
+    justify-content: center;
+}
+.btn:hover p{
+    text-decoration: underline;
+}
+
+.invite{
+    display: flex;
+}
+
+.selectperson{
+    border: none;
+    background:none;
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+
+.selectperson p:hover{
+    text-decoration: underline;
+}
+
+h1{
+    text-decoration: underline;
+}

@@ -1,0 +1,77 @@
+<div class="main">
+  <div class="boxlogo">
+    <img
+      src="https://cdnb.artstation.com/p/assets/images/images/054/615/361/large/encho-enchev-cathedral2.jpg?1664947600"
+      alt=""
+    />
+  </div>
+
+  <div class="newbtn">
+    <button class="button" (click)="openModal()">
+      <span>New board</span>
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="isModalOpen">
+    <div class="boxinfo">
+      <h2>New Board</h2>
+
+      <form *ngIf="showForms" (ngSubmit)="submitForms()">
+        <div class="card inputcard">
+          <div class="row">
+            <label for="boardName" class="form-label">Board Name</label>
+            <input type="text" id="boardName" [(ngModel)]="boardName" name="boardName" class="inputinfo" />
+          </div>
+
+
+
+            <label for="column1" class="form-label">Column 1</label>
+            <input type="text" id="column1" [(ngModel)]="column1" name="column1" class="inputinfo" />
+
+            <label for="column2" class="form-label">Column 2</label>
+            <input type="text" id="column2" [(ngModel)]="column2" name="column2" class="inputinfo" />
+
+            <label for="column3" class="form-label">Column 3</label>
+            <input type="text" id="column3" [(ngModel)]="column3" name="column3" class="inputinfo" />
+
+            <label for="column4" class="form-label">Column 4</label>
+            <input type="text" id="column4" [(ngModel)]="column4" name="column4" class="inputinfo" />
+
+          <div class="d-flex justify-content-between w-100">
+            <button class="close-btn" (click)="closeModal()">Close</button>
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+        
+        </div>
+      </form>
+
+      
+    </div>
+  </div>
+
+  <div class="board">
+    <div *ngFor="let board of boards; let i = index">
+        <div class="board-item">
+          <input *ngIf="board.isEditing" type="text" [(ngModel)]="board.boardName" class="inputinfo" id="editinfo"/>
+      
+    
+          <button *ngIf="!board.isEditing" class="btn" (click)="goToTask(board.boardName)">
+            <p>{{ board.boardName }}</p>
+          </button>
+          
+          
+            <button *ngIf="!board.isEditing" (click)="editBoard(i)"> <i class="bi bi-pen"></i> </button>
+            <button *ngIf="board.isEditing" (click)="saveBoard(i)">Save</button>
+            <button (click)="deleteBoard(i)">Delete</button>
+         
+          
+        </div>
+    </div>
+    <div class="logout">
+        <div class="btnlogout">
+            <button (click)="logout()">Logout</button>
+        </div>
+        
+    </div>
+</div>
