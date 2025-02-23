@@ -7,7 +7,7 @@ import { StorageService } from '../service/storage.service';
 
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
@@ -29,7 +29,7 @@ export class SidebarComponent {
 
   userData: string | null = null;
 
-  constructor(private router: Router,private storageService: StorageService,@Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(private router: Router,private storageService: StorageService,@Inject(PLATFORM_ID) private platformId: object,private location: Location) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -121,6 +121,7 @@ saveBoard(index: number): void {
 deleteBoard(index: number): void {
   this.boards.splice(index, 1); 
   localStorage.setItem('boards', JSON.stringify(this.boards)); 
+  this.router.navigate(['/sidebar']);
 }
 
 

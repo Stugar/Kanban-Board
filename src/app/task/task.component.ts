@@ -159,7 +159,7 @@ onDragOver(event: DragEvent): void {
     }).then(result => {
       if (result.isConfirmed) {
         this.selectedPerson = result.value;
-        localStorage.setItem('selectedPerson', this.selectedPerson); // เก็บข้อมูลลงใน localStorage
+        localStorage.setItem('selectedPerson', this.selectedPerson);
       }
     });
   }
